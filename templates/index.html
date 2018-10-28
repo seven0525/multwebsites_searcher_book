@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang='ja'>
+<head>
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" type="text/css" href="styles.css">
+  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.3.1/css/all.css" integrity="sha384-mzrmE5qonljUremFsqc01SB46JvROS7bZs3IO2EmfFsd15uHvIt+Y8vEf7N7fWAU" crossorigin="anonymous">
+  {% if title %}
+    <title>{{ title }}</title>
+  {% else %}
+    <title>Multi Booksite Seacher</title>
+  {% endif %}
+</head>
+
+<body>
+  <header class="header">
+    <div class="header__logo">
+      <h1 class="logo__title"><i class="fab fa-twitter-square"></i> 検索したい本のキーワードを入力してください</h1>
+      <div class="logo__text">
+        <!-- <p><a href="https://www.ibm.com/watson/jp-ja/developercloud/personality-insights.html">IBM Watson Personality Insights</a>を用いて、Twitterを分析</p> -->
+        <p>検索したい本のキーワードを入力してください</p>
+      </div>
+    </div>
+  </header>
+
+  <!-- user_nameを入力した後の画面 -->
+  {% if amazon_1_name %}
+  <main class="main">
+    <div class="user_input">
+      <h1>Amazonの検索結果</h1>
+      <h5>
+        {{ amazon_1_name }}
+      </h5>
+      <h5>
+          {{ amazon_2_name }}
+      </h5>
+      <h5>
+          {{ amazon_3_name }}
+      </h5>
+      <h5>
+            {{ amazon_4_name }}
+        </h5>
+        <h5>
+            {{ amazon_5_name }}
+        </h5>
+
+    </div>
+    <div class="user_input">
+        <h1>BookOffの検索結果</h1>
+      <h5>
+        {{ bookoff_1_name }}
+      </h5>
+      <h5>
+          {{ bookoff_2_name }}
+      </h5>
+      <h5>
+          {{ bookoff_3_name }}
+      </h5>
+      <h5>
+            {{ bookoff_4_name }}
+        </h5>
+        <h5>
+            {{ bookoff_5_name }}
+        </h5>
+
+    </div>
+    <div class="user_input">
+        <h1>東京農工大学OPACの検索結果</h1>
+      <h5>
+          {{ TAT_1_name }}
+      </h5>
+      <h5>
+          {{ TAT_2_name }}
+      </h5>
+      <h5>
+          {{ TAT_3_name }}
+      </h5>
+      <h5>
+            {{ TAT_4_name }}
+        </h5>
+        <h5>
+            {{ TAT_5_name }}
+        </h5>
+    </div>
+  </main>
+
+  {% else %}
+  
+  <main class="main">
+    <div class="user_input">
+      <form class="user_input__form" action="/result" method="post" name="userinputform">
+        <p>
+        検索したい本のキーワード: <input type="text" name="key_word">
+        </p>
+        <p>
+          <input type="submit" value="本を探す">
+        </p>
+      </form>
+    </div>
+  </main>
+
+  {% endif %}
+</body>
+</html>
