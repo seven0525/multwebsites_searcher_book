@@ -9,4 +9,4 @@ BookOffOnline, Amazon, 東京農工大学OPACにて本のタイトルを同時�
 
 
 
-*Copyright © 2007-2012 LIG inc. All Rights Reserved.*
+**Copyright © Taichi Watanabe All Rights Reserved.**
